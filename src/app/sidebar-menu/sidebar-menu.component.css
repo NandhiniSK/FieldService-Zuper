@@ -1,0 +1,10 @@
+.side-menu-list > span {
+  cursor: pointer;
+  display: grid;
+  height: 50px;
+}
+
+mat-icon {
+  margin: auto;
+}
+

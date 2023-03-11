@@ -1,0 +1,15 @@
+<div class="card profile-card">
+    <div class="card-body">
+        <img *ngIf="gender" class="profile-img" [src]="'/assets/profile-images/'+ gender +'.jpg'">
+        <div class="profile-content my-2">
+            <h5>{{name}}</h5>
+            <mat-icon *ngFor="let _ of [].constructor(getNumber(rating))" class="user-rating">star</mat-icon>
+            <div class="row">
+                <span class="profile-detail"><mat-icon>phone</mat-icon>{{phone}}</span>
+                <span class="profile-detail"><mat-icon>email</mat-icon>{{email}}</span>
+                <span class="profile-detail"><mat-icon>place</mat-icon>{{location}}</span>
+                <span class="profile-detail">{{gender}}</span>
+            </div>  
+        </div>
+    </div>
+</div>

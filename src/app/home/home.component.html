@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="row card-body float-right">
+                <mat-form-field class="col-12 col-sm-6 col-lg-4" appearance="fill">
+                    <mat-label>Select Filter type</mat-label>
+                    <mat-select [(ngModel)]="mainFilterObj" (selectionChange)="onMainFilterChange()">
+                        <mat-option *ngFor="let item of mainFilterList" [value]="item">
+                            {{ item.label }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="col-12 col-sm-6 col-lg-4" appearance="fill">
+                    <mat-label>Select Value</mat-label>
+                    <button *ngIf="subFilter" matSuffix mat-icon-button aria-label="Clear" (click)="subFilter=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-select [(ngModel)]="subFilter">
+                    <mat-option *ngFor="let item of mainFilterObj?.obj?.list | keyvalue" [value]="item.key">
+                        {{ item.key }}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-7">
+      <app-job-stats [filterValue]="subFilter" [totalJobCount]="jobList.length" [selectedList]="mainFilterObj?.obj?.list"></app-job-stats>
+    </div>
+    <div class="col-12 col-md-5">
+        <app-chart [chartData]="mainFilterObj?.obj?.list"></app-chart>
+    </div>
+    <div class="col-12 col-md-12">
+      <app-job-table [jobList]="jobList" [filterType]="mainFilterObj?.obj?.filterType" [filterVal]="subFilter"></app-job-table>
+    </div>
+</div>
+

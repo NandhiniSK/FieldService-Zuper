@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body">
+        <table #customerTable class="w-100 table table-responsive">
+            <thead>
+                <tr>
+                    <th *ngFor="let col of columnList">
+                        {{col}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of filteredList | paginate: { itemsPerPage: rowCount, currentPage: p } "
+                    [routerLink]="'/customer/' + customer.id">
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.phone_number}}</td>
+                    <td>{{customer.gender}}</td>
+                    <td>{{customer.location}}</td>
+                    <td>{{customer.total_request}}</td>
+                    <td>
+                        <mat-icon *ngFor="let _ of [].constructor(getNumber(customer.rating))" class="star-rating">star</mat-icon>
+                    </td>
+                </tr>
+                <tr *ngIf="!filteredList || filteredList?.length == 0">
+                    <td class="text-center" colspan="100%">No data available</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-12 col-sm-3">
+
+            </div>
+            <div class="col-12 col-sm-9 text-center text-sm-end">   
+                <pagination-controls (pageChange)="p = $event" [maxSize]="5"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

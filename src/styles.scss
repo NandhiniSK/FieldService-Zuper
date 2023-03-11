@@ -1,0 +1,67 @@
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ccc9c9;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(184, 185, 185);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(133, 131, 131);
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #d8d7d7 !important;
+    color: rgb(35, 34, 34) !important;
+  }
+  
+  .row {
+    margin: 0px !important;
+  }
+  
+  .row > * {
+    margin-bottom: 0.5rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  label {
+    font-size: calc(9px + 0.8vmin);
+  }
+  
+  tbody{
+    overflow-x: auto;
+    max-height: 200px;
+  }
+  th{
+    text-transform: uppercase;
+    font-size: calc(10px + 0.9vmin);
+  }
+
+  td, label, mat-option{
+    text-transform: capitalize;
+    font-size: calc(10px + 0.7vmin);
+  }
+
+  .card-body{
+     padding-bottom: unset;
+  }
+
+  .ngx-pagination a, .ngx-pagination button {
+    cursor: pointer;
+    text-decoration: unset !important;
+  }
+
+  .ngx-pagination .current, .active-menu, .panel-name{
+    background-color: rgb(255, 123, 0) !important;
+    color: white !important;
+  }

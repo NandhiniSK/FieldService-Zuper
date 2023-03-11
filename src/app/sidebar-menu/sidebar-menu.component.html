@@ -1,0 +1,6 @@
+<div class="side-menu-list">
+  <span *ngFor="let menu of menuList" [ngClass]="activeMenuBar == menu.routeLink ? 'active-menu' : ''">
+    <mat-icon
+      (click)="onTabClick(menu.routeLink)">{{ menu.icon }}</mat-icon>
+  </span>
+</div>

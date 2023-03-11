@@ -1,0 +1,19 @@
+.profile-card{
+    background-color: rgb(255, 123, 0);
+    color: #FFFFFF;
+    font-size: larger;
+    text-align: center;
+}
+
+.profile-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: auto;
+    vertical-align: middle;
+    display: flex;
+}
+
+.profile-detail{
+
+}

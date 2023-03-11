@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="row card-body">
+                <mat-form-field class="col-12 col-sm-4" appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input type="text" [(ngModel)]="selectedName" matInput [matAutocomplete]="nameFilter">
+                    <button *ngIf="selectedName" matSuffix mat-icon-button aria-label="Clear" (click)="selectedName=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-autocomplete #nameFilter="matAutocomplete">
+                        <mat-option *ngFor="let name of uniqueFilterList?.nameList | arrayFilter:selectedName" [value]="name">
+                          {{name}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field class="col-12 col-sm-4" appearance="fill">
+                    <mat-label>Location</mat-label>
+                    <input type="text" [(ngModel)]="selectedLocation" matInput [matAutocomplete]="location">
+                    <button *ngIf="selectedLocation" matSuffix mat-icon-button aria-label="Clear" (click)="selectedLocation=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-autocomplete aria-label="Location" #location="matAutocomplete">
+                        <mat-option *ngFor="let location of uniqueFilterList?.locationList | arrayFilter:selectedLocation" [value]="location">
+                          {{location}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field class="col-12 col-sm-4" appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <button *ngIf="genderFilterValue" matSuffix mat-icon-button aria-label="Clear" (click)="genderFilterValue=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <mat-select [(ngModel)]="genderFilterValue">
+                        <mat-option *ngFor="let gender of uniqueFilterList?.genderList" [value]="gender">
+                          {{gender}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <app-customer-table [selectedName]="selectedName" [selectedLocation]="selectedLocation" [selectedGender]="genderFilterValue" [customerList]="customerList"></app-customer-table>
+    </div>
+</div>
+
+

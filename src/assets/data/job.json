@@ -1,0 +1,74 @@
+[
+  {
+    "job_id": 1,
+    "status": "CONFIRMED",
+    "assigned_to": ["raghav", "vijay"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 2,
+    "status": "ON MY WAY",
+    "assigned_to": ["vijay"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 3,
+    "status": "CONFIRMED",
+    "assigned_to": ["prem"],
+    "location": "banglore"
+  },
+  {
+    "job_id": 4,
+    "status": "STARTED",
+    "assigned_to": ["raghav"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 5,
+    "status": "STARTED",
+    "assigned_to": ["ranjith"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 6,
+    "status": "COMPLETED",
+    "assigned_to": ["ajay"],
+    "location": "banglore"
+  },
+  {
+    "job_id": 7,
+    "status": "CONFIRMED",
+    "assigned_to": ["raghav", "vijay"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 8,
+    "status": "COMPLETED",
+    "assigned_to": ["vijay"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 9,
+    "status": "CONFIRMED",
+    "assigned_to": ["prem", "ajay"],
+    "location": "banglore"
+  },
+  {
+    "job_id": 10,
+    "status": "COMPLETED",
+    "assigned_to": ["raghav"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 11,
+    "status": "STARTED",
+    "assigned_to": ["ranjith"],
+    "location": "chennai"
+  },
+  {
+    "job_id": 12,
+    "status": "STARTED",
+    "assigned_to": ["ajay"],
+    "location": "banglore"
+  }
+]

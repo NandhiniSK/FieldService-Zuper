@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="card-body">
+        <h5>{{subject}}</h5>
+        <mat-icon *ngFor="let _ of [].constructor(getNumber(rating))" class="star-rating">star</mat-icon>
+        <div class="my-2 my-md-3">
+            {{feedbackSentence}}
+        </div>
+    </div>
+</div>

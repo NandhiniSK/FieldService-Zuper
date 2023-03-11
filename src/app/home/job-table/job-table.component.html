@@ -1,0 +1,32 @@
+<div class="w-100 card">
+    <div class="card-body">
+        <table class="w-100 table table-responsive">
+            <thead>
+                <tr><th *ngFor="let col of columnList"
+                    (click)="OnSortClicked(col.key, sortable.columnName == col.key)">
+                    <span>{{col.label}}</span>
+                    <span class="float-end" *ngIf="sortable.isAscending || sortable.columnName!=col.key">
+                        <mat-icon [ngClass]="col.key == sortable.columnName ? 'active' : 'inActive'">north</mat-icon>
+                    </span>
+                    <span class="float-end" *ngIf="!sortable.isAscending && sortable.columnName == col.key">
+                        <mat-icon class="active">south</mat-icon>
+                    </span>
+                </th></tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let job of filteredList | paginate: { itemsPerPage: rowCount, currentPage: p }">
+                    <td>{{job.job_id}}</td>
+                    <td>{{job.status}}</td>
+                    <td><div *ngFor="let person of job.assigned_to">{{person}}</div></td>
+                    <td>{{job.location}}</td>
+                </tr>
+                <tr *ngIf="!filteredList || filteredList?.length == 0">
+                    <td class="w-100 text-center">No data available</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="w-100 text-center text-sm-end">   
+            <pagination-controls (pageChange)="p = $event" [maxSize]="5"></pagination-controls>
+        </div>
+    </div>
+</div>

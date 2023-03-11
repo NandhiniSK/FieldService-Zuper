@@ -1,0 +1,19 @@
+<div class="card h-100">
+    <div class="card-body">
+      <h5 class="col-12">Job Stats</h5>
+      <div class="row text-center">
+        <div class="col-12 col-sm-6 col-md-3">
+          <h3 class="w-100">
+            {{ totalJobCount }}
+          </h3>
+          <label class="w-100">TOTAL JOBS</label>
+        </div>
+        <div
+          *ngFor="let item of selectedList | keyvalue | category: filterValue"
+          class="col-12 col-sm-6 col-md-3">
+          <h3 class="w-100">{{ item.value }}</h3>
+          <label class="w-100">{{ item.key | uppercase}}</label>
+        </div>
+      </div>
+    </div>
+  </div>

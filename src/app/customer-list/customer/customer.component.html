@@ -1,0 +1,37 @@
+<div class="row flex-sm-row-reverse">
+    <div class="col-12 col-md-3">
+        <app-profile-card [name]="customerDetails.name" [gender]="customerDetails.gender"
+        [rating]="customerDetails.rating" [phone]="customerDetails.phone_number" [email]="customerDetails.email"
+        [location]="customerDetails.location"></app-profile-card>    
+    </div>
+    <div class="col-12 col-md-9">
+        <div class="row my-2">
+            <div class="col-12 col-sm-6 col-md-3" *ngFor="let item of taskList | keyvalue">
+                <app-task-card [taskStatus]="item"></app-task-card>
+            </div>
+        </div>
+        <div class="card my-2 panel-name">
+            <div class="card-body" (click)="isFeedbackOpen = !isFeedbackOpen">
+                <h5 class="float-start">Feedbacks</h5>
+                <mat-icon class="float-end">{{!isFeedbackOpen ? "expand_more" : "expand_less"}}</mat-icon>
+            </div>
+        </div>
+        <div *ngIf="isFeedbackOpen">
+            <div *ngFor="let i of [1,2,3,4,5]" class="my-2">
+                <app-feedback></app-feedback>
+            </div>
+        </div>
+        <div class="card my-2 panel-name">
+            <div class="card-body " (click)="isSevicePersonFeedbackOpen = !isSevicePersonFeedbackOpen">
+                <h5 class="float-start">Service Person Feedbacks</h5>
+                <mat-icon class="float-end">{{!isSevicePersonFeedbackOpen ? "expand_more" : "expand_less"}}</mat-icon>
+            </div>
+        </div>
+        <div *ngIf="isSevicePersonFeedbackOpen">
+            <div *ngFor="let i of [1,2,3,4,5,7,5,6,4]" class="my-2">
+                <app-feedback></app-feedback>
+            </div>
+        </div>  
+    </div>
+</div>
+

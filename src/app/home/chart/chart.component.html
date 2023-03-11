@@ -1,0 +1,13 @@
+<div class="card h-100">
+  <div class="card-body">
+    <div *ngIf="data">
+      <canvas
+        baseChart
+        [data]="data"
+        chartType="pie"
+        [options]="chartOptions"
+        [legend]="false">
+        </canvas>
+    </div>
+  </div>
+</div>

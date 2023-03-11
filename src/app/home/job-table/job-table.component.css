@@ -1,0 +1,4 @@
+.ngx-pagination a, .ngx-pagination button {
+    cursor: pointer;
+    text-decoration: unset !important;
+}
