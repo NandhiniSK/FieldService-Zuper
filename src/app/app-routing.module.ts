@@ -21,16 +21,16 @@ const routes = [
     component: CustomerListComponent,
   },
   {
-    path: 'customer/:id', // child route path
-    component: CustomerComponent, // child route component that the router renders
+    path: 'customer/:id',
+    component: CustomerComponent,
   },
   {
     path: 'employee',
     component: EmployeeListComponent,
   },
   {
-    path: 'employee/:name', // child route path
-    component: EmployeeComponent, // child route component that the router renders
+    path: 'employee/:name',
+    component: EmployeeComponent,
   },
   {
     path: 'schedule',
